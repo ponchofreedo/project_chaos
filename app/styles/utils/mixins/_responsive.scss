@@ -1,7 +1,7 @@
 // bower:scss
 // endbower
 
-// taken from gumby framework v2...credit to the guys from DigitalSurgeons
+// taken and adapted from gumby framework v2...credit to the guys from DigitalSurgeons
 @mixin respond($media) {
   @if $media == portrait-phones {
     @media only screen and (max-width: $min-device-width) { @content; }
@@ -12,23 +12,8 @@
   @else if $media == all-phones {
     @media only screen and (max-width: breakpoint($tablet-device-width)) { @content; }
   }
-  @else if $media == portrait-tablets {
-    @media only screen and (max-width: $tablet-device-width) { @content; }
-  }
-  @else if $media == tablets {
-    @media only screen and (min-width: $tablet-device-width) and (max-width: $document-width - 1) { @content; }
-  }
   @else if $media == desktop {
     @media only screen and (min-width: $tablet-device-width) { @content; }
-  }
-  @else if $media == document-width {
-    @media only screen and (max-width: $document-width + 20) { @content; }
-  }
-  @else if $media == large-screens {
-    @media only screen and (min-width: $max-device-width) { @content; }
-  }
-  @else if $media == print {
-    @media print { @content; }
   }
   @else {
     @media only screen and ('#{$media}') { @content; }
