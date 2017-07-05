@@ -16,8 +16,6 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  //font-feature-settings: "pnum";
-  //font-variant-numeric: proportional-nums;
   /*
   shamelessly poached from getskeleton.com.
   this allows for 'desired size / 10' sizing in ems and rems. i.e, 1.5rem = 15px.
@@ -62,11 +60,6 @@ main {
   }
 }
 
-header,
-section {
-  @include clearfix;
-}
-
 .slicy {
   width: 100%;
   height: 100%;
@@ -94,7 +87,9 @@ section {
 @include color-classes('text', 'color');
 @include color-classes('bg', 'background');
 
-/*svg {
+/*
+// not ready for this yet
+svg {
   background: none;
   position: relative;
   height: 100%;
