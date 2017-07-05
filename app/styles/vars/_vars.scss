@@ -1,0 +1,62 @@
+// bower:scss
+// endbower
+
+// responsive helpers
+$min-device-width: 320px;
+$tablet-device-width: 768px;
+$document-width: 1440px;
+$max-device-width: 2880px;
+
+// color definitions
+$black:   #323232;
+$ghost:   #fafaff;
+$gray-1:  #48525c;
+$gray-2:  #6c7a88;
+$gray-3:  #708090;
+$gray-4:  #cfd2de;
+$gray-5:  #dcdce0;
+$green:   #00d7af;    // "Caribbean Green"... for the lighter shade, use the lighter mixin at 38.4%
+$orange:  #f88824;    // "Carrot Orange"
+
+// color mixin experiment stuff
+$theme-colors: (
+  black:  $black,
+  ghost:  $ghost,
+  gray-1: $gray-1,
+  gray-2: $gray-2,
+  gray-3: $gray-3,
+  gray-4: $gray-4,
+  gray-5: $gray-5,
+  green:  $green,
+  orange: $orange
+);
+
+// color extensions have (officially) been replaced by a mixin in the utils directory
+
+// font family
+$proxima-nova: 'proxima-nova', sans-serif;
+$icon-font: 'port_social';
+
+// font-sizing
+// all font sizes are based off the diatonic scals @ ty-p.cc
+// values converted into em's to make my life a bit easier
+$huger-type:          6.2em;    // (Canon)
+$huge-type:           4.8em;    // (Double Great Primer)
+$larger-type:         3.2em;    // (Double Pica)
+$large-type:          2.8em;    // (Double Small Pica)
+$medium-type:         2.4em;    // (Great Primer)
+$small-type:          2.1em;    // (Columbian)
+$default-font-size:   1.9em;    // baseline size (English), used for em/rem sizing
+$smaller-type:        1.6em;    // (Pica)
+
+// font-weighting
+$regular: 400;        // regular
+$bold: 700;           // bold
+$xbold: 800;          // extra bold
+$xxbold: 900;         // black
+
+
+
+
+
+

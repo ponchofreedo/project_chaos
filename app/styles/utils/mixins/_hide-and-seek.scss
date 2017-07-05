@@ -1,0 +1,12 @@
+// bower:scss
+// endbower
+
+// taken from gumby framework v2...credit to the guys from DigitalSurgeons
+@mixin hide-and-seek {
+  .go-away {
+    display: none;
+  }
+  .go-away.not-listening, .peek-a-boo {
+    display: block;
+  }
+}
