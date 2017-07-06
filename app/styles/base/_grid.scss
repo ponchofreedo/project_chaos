@@ -8,8 +8,17 @@
   margin: 0 auto;
   padding-left: 24px;
   padding-right: 24px;
+  position: relative;
   @include respond(super-desktop) {
     padding: 0;
+  }
+}
+.shelf {
+  width: 100%;
+  margin: 0 auto;
+  @include clearfix;
+  + .shelf {
+    margin-top: 12em;
   }
 }
 
@@ -40,15 +49,6 @@
   .bottle.koozie-right,
   .bottles.koozie-right {
     padding-right: 1.6em;
-  }
-}
-@include respond(all-phones) {
-  .bottle.koozie-left,
-  .bottle.koozie-right,
-  .bottles.koozie-left,
-  .bottles.koozie-right {
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 
@@ -93,6 +93,49 @@ $grid-formula: 100% / $max-num-cols;
       .#{num-as-word($i)}.bottles {
         width: $grid-formula * $i;
       }
+    }
+  }
+  @for $j from $min-num-cols through $max-num-cols - 1 {
+    .push-#{num-as-word($j)} {
+      margin-left: $grid-formula * $j;
+    }
+  }
+}
+
+@include respond(all-phones) {
+  .bottle,
+  .bottles {
+    width:auto !important;
+  }
+
+  .lefty,
+  .righty {
+    float: none !important;
+  }
+
+  .koozie-left,
+  .koozie-right,
+  .koozie-left,
+  .koozie-right {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  [class^="push-"],
+  [class*="push-"] {
+    margin-left: 0 !important;
+  }
+}
+
+@media only screen and (max-width: $ambiguous-value) {
+  #about {
+    [class^="push-"],
+    [class*="push-"] {
+      margin-left: 0 !important;
+    }
+    .bottle,
+    .bottles {
+      width: auto !important;
     }
   }
 }
