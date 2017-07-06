@@ -64,35 +64,66 @@ main {
   position: relative;
   overflow: hidden;
   display: block;
-  header,
-  section {
-    position: relative;
-    @include clearfix;
-  }
 }
 
+header,
+section {
+  position: relative;
+  @include clearfix;
+}
+
+// next time, handle with a mixin. hongkiat has a good resource for this exact scenario
 .slicy {
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  transform-origin: inherit;
-  position: absolute;
-  :before {
-    content: "";
-    top: 0;
+  position: relative;
+  background: inherit;
+  &.slicy {
+    &-top::before {
+      content: "";
+      width: 100vw;
+      height: 100%;
+      position: absolute;
+      background-color: inherit;
+      z-index: -1;
+      top: 0;
+      transform-origin: right top;
+      transform: skewY(6deg);
+    }
+    &-bottom::after {
+      width: 100vw;
+      min-height: 100%;
+      position: absolute;
+      background-color: inherit;
+      z-index: -1;
+      left: 0;
+      bottom: 0;
+      transform-origin: left bottom;
+      transform: skewY(6deg);
+    }
   }
-  &-bottom {
-    transform-origin: bottom right;
-    transform: skewY(6deg);
+}
+
+#about,
+#work,
+#rambling,
+#contact {
+  min-height: 64em;
+  padding-top: 18em;
+  margin-top: 18em;
+  padding-bottom: 24em;
+  @include respond(all-phones) {
+    margin-top: 0;
   }
-  &-top {
-    transform-origin: top left;
-    transform: skewY(6deg);
+}
+header {
+  &.slicy-bottom::after {
+    height: 100vh;
   }
 }
 
 #opener {
-  min-height: 100vh;
+  min-height: 75vh;
   @include respond(all-phones) {
     min-height: 64em;
   }
@@ -101,7 +132,7 @@ main {
   }
   div {
     padding-top: 0;
-    @include vertical-align(absolute, 32%);
+    @include vertical-align(absolute, 40%);
     @include respond(all-phones) {
       @include vertical-align(absolute, 44%);
       padding-right: 3.2em;
@@ -118,7 +149,59 @@ main {
   }
 }
 #about {
-  height: 500px;
+  article {
+    h4 {
+      margin-top: 2em;
+      margin-bottom: 0.5em;
+    }
+    p {
+      font-size: $medium-type;
+      &.next {
+        margin-top: 1.5em;
+      }
+    }
+  }
+}
+#work {
+  padding-bottom: 48em;
+  @media screen and (max-width: $ambiguous-value) {
+    padding-bottom: 24em;
+  }
+  h2 {
+    margin-bottom: 0.67em;
+  }
+  p {
+    font-size: $default-font-size;
+    margin-bottom: 6.4em;
+    @include respond (all-phones) {
+      margin-bottom: 3.4em;
+    }
+  }
+  article {
+    a {
+      display: block;
+    }
+    h6 {
+      margin-bottom: 1.2em;
+    }
+    h3 {
+      margin-bottom: 1em;
+    }
+    p {
+      font-size: $medium-type;
+      margin-bottom: 2em;
+    }
+    @include respond(all-phones) {
+      &:last-child {
+        margin-top: 12em;
+      }
+    }
+  }
+}
+
+#rambling {
+  margin-top: 0em;
+  z-index: 2;
 }
 
 /* setting an icon size baseline */

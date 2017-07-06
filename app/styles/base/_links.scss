@@ -1,0 +1,33 @@
+// bower:scss
+// endbower
+
+a {
+  text-decoration: none;
+  background-color: none;
+  color: inherit;
+  font-weight: inherit;
+  &:focus {
+    outline: 0;
+  }
+  &.shade {
+    border-bottom: 0.3em solid;
+    box-shadow: none;
+    display: inline-block !important;
+    font-weight: bold;
+    line-height: 0.5;
+    &.green {
+      border-bottom-color: lighten($green, 38.4%);
+      box-shadow: 0px -0.16em 0px lighten($green, 38.4%) inset;
+    }
+    &.orange {
+      font-size: $small-type;
+      font-weight: $xbold;
+      font-style: italic;
+      text-transform: uppercase;
+      border-bottom-color: $orange;
+      box-shadow: 0px -0.16em 0px $orange inset;
+    }
+  }
+  &:visited {
+  }
+}

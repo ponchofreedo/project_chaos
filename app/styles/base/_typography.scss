@@ -23,16 +23,59 @@ h1 {
   font-style: italic;
 }
 
+h2 {
+  font-size: $huge-type;
+  line-height: 1.1em;
+  font-weight: $xxbold;
+  display: block;
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h3 {
+  font-size: $larger-type;
+  font-weight: $xxbold;
+  display: block;
+  font-style: italic;
+  line-height: 1.3em;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: $larger-type;
+  font-weight: $regular;
+  display: block;
+  font-style: normal;
+  line-height: 1.3em;
+}
+
+h5 {
+  font-size: $default-font-size;
+  font-weight: $xbold;
+  display: block;
+  text-transform: uppercase;
+  font-style: italic;
+  line-height: 1.1em;
+}
+
+h6 {
+  font-size: $smaller-type;
+  font-weight: $xbold;
+  display: block;
+  text-transform: uppercase;
+  font-style: italic;
+  line-height: 1.1em;
+}
+
 b {
   font-weight: $bold;
 }
 
 p {
-  font-size: $default-font-size;
   line-height: 1.4em;
   font-weight: $regular;
-  .next {
-    margin-top: 1.8em;
+  &.next {
+    margin-top: 1em;
   }
 }
 
