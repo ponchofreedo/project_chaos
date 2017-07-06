@@ -27,7 +27,7 @@ body {
   background: white;
   font-family: $proxima-nova;
   @include color($black, color);
-  font-size: $default-font-size;
+  font-size: 1em;
   font-weight: $regular;
   font-style: default;
   @include respond(all-phones) {
@@ -42,7 +42,13 @@ body {
 
 @include hide-and-seek;
 
-.main-container {
+@include respond(all-phones) {
+  .go-away-mobile {
+    display: none;
+  }
+}
+
+.main--container {
   float: none;
   margin: 0;
   padding: 0;
@@ -81,7 +87,26 @@ main {
 }
 
 #opener {
-  height: 700px;
+  min-height: 100vh;
+  div {
+    @include vertical-align(absolute, 36%);
+    padding-top: 0;
+  }
+  .logo {
+    margin-bottom: 6.2em;
+  }
+}
+#about {
+  height: 500px;
+}
+
+/* setting an icon size baseline */
+i {
+  font-size: 2.4em;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
 }
 
 @include color-classes('text', 'color');
