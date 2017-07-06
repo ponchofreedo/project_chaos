@@ -15,6 +15,12 @@
   @else if $media == desktop {
     @media only screen and (min-width: $tablet-device-width) { @content; }
   }
+  @else if $media == super-tablet {
+    @media only screen and (width: 1024px) and (height: 1366px) { @content; }
+  }
+  @else if $media == super-desktop {
+    @media only screen and (min-width: $document-width) { @content; }
+  }
   @else {
     @media only screen and ('#{$media}') { @content; }
   }
