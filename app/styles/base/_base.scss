@@ -42,7 +42,7 @@ body {
 
 @include hide-and-seek;
 
-@include respond(all-phones) {
+@include respond(portrait-phones) {
   .go-away-mobile {
     display: none;
   }
@@ -53,6 +53,11 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  @include respond(all-phones) {
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 main {
@@ -88,12 +93,28 @@ main {
 
 #opener {
   min-height: 100vh;
+  @include respond(all-phones) {
+    min-height: 64em;
+  }
+  @include respond(super-tablet) {
+    min-height: 70em;
+  }
   div {
-    @include vertical-align(absolute, 36%);
     padding-top: 0;
+    @include vertical-align(absolute, 32%);
+    @include respond(all-phones) {
+      @include vertical-align(absolute, 44%);
+      padding-right: 3.2em;
+    }
   }
   .logo {
     margin-bottom: 6.2em;
+    width: 6.4em;
+    height: auto;
+    @include respond(all-phones) {
+      margin-bottom: 3.2em;
+      width: 4.8em;
+    }
   }
 }
 #about {
