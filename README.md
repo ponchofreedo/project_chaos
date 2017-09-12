@@ -1,11 +1,8 @@
 # project_chaos
-my 2017 portfolio...a long time coming experiment
+This was originally going to be the playground for my portfolio...but this is now going to become a giant enviornment riddled with Sass/CSS experiments.
 
 # details
-based off the Yeoman Webapp generator. to compensate for CMS-styled url directories, and because I didn't want to make too many apache changes, gulp css-url-to-absolute package is used.
+Projects are scaffolded with Yeoman.
 
-the url that ill be hosting this on will be http://chaos.zachfreed.com. follow along with progress, if you so choose.
-
-what im shooting for...
-![project_chaos home](https://github.com/ponchofreedo/project_chaos/blob/master/mocks/port_landing.jpg "landing mockup")
+The url that I'll be hosting this on will be http://chaos.zachfreed.com. follow along with updates, if you so choose.
 
